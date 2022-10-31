@@ -1,0 +1,34 @@
+#Hive stage table
+Create external table if not exists hbase_stg_sales_order_data
+(
+Key string
+QUANTITYORDERED int,
+PRICEEACH float,
+ORDERLINENUMBER int,
+SALES float,
+STATUS string,
+QTR_ID int,
+MONTH_ID int,
+YEAR_ID int,
+PRODUCTLINE string,
+MSRP int,
+PRODUCTCODE string,
+PHONE string,
+CITY string,
+STATE string,
+POSTALCODE string,
+COUNTRY string,
+TERRITORY string,
+CONTACTLASTNAME string,
+CONTACTFIRSTNAME string,
+DEALSIZE string
+)
+row format delimited
+fields terminated by ','
+
+
+#Loading data into stage table
+load data local inpath 'file:///tmp/teacher_hive_temp/sales_order_data.csv' into table hbase_stg_sales_order_data; 
+
+#Inserting the data from stage table to main hive table
+insert into table hbase_stg_sales_order_data select * from hbase_sales_order_data;
