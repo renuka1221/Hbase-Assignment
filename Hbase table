@@ -1,0 +1,34 @@
+#Hbase table
+create ‘sales_order’,’ordernumber’,’quantityorderred’,’priceeach’,’orderlinenumber’
+
+#Hive table
+Create external table if not exists hbase_sales_order_data
+(
+Key string,
+QUANTITYORDERED int,
+PRICEEACH float,
+ORDERLINENUMBER int,
+SALES float,
+STATUS string,
+QTR_ID int,
+MONTH_ID int,
+YEAR_ID int,
+PRODUCTLINE string,
+MSRP int,
+PRODUCTCODE string,
+PHONE string,
+CITY string,
+STATE string,
+POSTALCODE string,
+COUNTRY string,
+TERRITORY string,
+CONTACTLASTNAME string,
+CONTACTFIRSTNAME string,
+DEALSIZE string
+)
+row format delimited
+fields terminated by ','
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
+WITH SERDEPROPERTIES
+("hbase.columns.mapping"=":key,ordernumber:quantityordered,ordernumber:priceeach,ordernumber:orderlinenumber,ordernumber:sales,quantityordered:status,quantityordered:qtr_id,quantityordered:month_id,priceeach:year_id,priceeach:productline,priceeach:msrp,priceeach:productcode,orderlinenumber:phone,orderlinenumber:city,orderlinenumber:state,orderlinenumber:postalcode,orderlinenumber:country,orderlinenumber:territory,orderlinenumber:contactlastname,orderlinenumber:contactfirstname,orderlinenumber:dealsize”)
+TBLPROPERTIES("hbase.table.name"="sales_order");
