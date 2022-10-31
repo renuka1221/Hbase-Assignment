@@ -1,0 +1,22 @@
+#Put the data into the hbase table.
+
+Put ‘sales_order’ , ‘1’ , ‘ordernumber:quantityordered’ , ‘30’
+Put ‘sales_order’ , ‘1’ , ‘ordernumber:priceeach’ , ‘95.7’
+Put ‘sales_order’ , ‘1’ , ‘ordernumber:orderlinenumber’ , ‘2’
+Put ‘sales_order’ , ‘1’ , ‘ordernumber:sales’ , ‘2871’
+Put ‘sales_order’ , ‘1’ , ‘quantityordered:status’ , ‘shipped’
+Put ‘sales_order’ , ‘1’ , ‘quantityordered:qtr_id’ , ‘2’
+Put ‘sales_order’ , ‘1’ , ‘quantityordered:month_id’ , ‘5’
+Put ‘sales_order’ , ‘1’ , ‘priceeach:year_id’ , ‘2003’
+Put ‘sales_order’ , ‘1’ , ‘priceeach:productline’ , ‘motorcycles’
+ Put ‘sales_order’ , ‘1’ , ‘priceeach:msrp’ , ‘95’
+Put ‘sales_order’ , ‘1’ , ‘priceeach:productcode’ , ‘s10_1678’
+ Put ‘sales_order’ , ‘1’ , ‘orderlinenumber:phone’ , ‘2125557818’
+ Put ‘sales_order’ , ‘1’ , ‘orderlinenumber:city’ , ‘Reims’
+ Put ‘sales_order’ , ‘1’ , ‘orderlinenumber:state’ , ‘CA’
+ Put ‘sales_order’ , ‘1’ , ‘orderlinenumber:postalcode’ , ‘10022’
+ Put ‘sales_order’ , ‘1’ , ‘orderlinenumber:country’ , ‘USA’
+ Put ‘sales_order’ , ‘1’ , ‘orderlinenumber:territory’ , ‘NA’
+ Put ‘sales_order’ , ‘1’ , ‘orderlinenumber:contactlastname’ , ‘Yu’
+ Put ‘sales_order’ , ‘1’ , ‘orderlinenumber:contactfirstname’ , ‘Kwai’
+ Put ‘sales_order’ , ‘1’ , ‘orderlinenumber:dealsize’ , ‘small’
